@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Alibaba Explorer</title>
+
+  <link rel="stylesheet" href="./styles.css">
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+
+  <header class="navbar">
+
+    <div class="brand">
+
+      <div class="brand-icon">
+        A
+      </div>
+
+      <div class="brand-info">
+        <strong>Alibaba Explorer</strong>
+        <span>Product scraper</span>
+      </div>
+
+    </div>
+
+    <div class="status">
+      <span class="status-dot"></span>
+      API Online
+    </div>
+
+  </header>
+
+
+  <main class="container">
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+      <div class="hero-content">
+
+        <span class="eyebrow">
+          PRODUCT RESEARCH
+        </span>
+
+        <h1>
+          Explora productos de
+          <span>Alibaba</span>
+        </h1>
+
+        <p>
+          Busca productos y consulta información
+          directamente desde nuestro scraper.
+        </p>
+
+      </div>
+
+
+      <!-- SEARCH -->
+
+      <div class="search-card">
+
+        <label for="searchInput">
+          ¿Qué producto estás buscando?
+        </label>
+
+        <div class="search-wrapper">
+
+          <div class="search-input">
+
+            <span class="search-icon">
+              ⌕
+            </span>
+
+            <input
+              id="searchInput"
+              type="text"
+              placeholder="Ej. BYD, smartwatch, shoes..."
+            >
+
+          </div>
+
+          <button id="searchButton">
+            Buscar
+          </button>
+
+        </div>
+
+        <div class="search-hint">
+          Presiona <strong>Enter</strong> para buscar
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- RESULTS -->
+
+    <section class="results-section">
+
+      <div class="section-header">
+
+        <div>
+
+          <span class="section-label">
+            RESULTADOS
+          </span>
+
+          <h2>
+            Productos encontrados
+          </h2>
+
+        </div>
+
+        <span
+          id="resultCount"
+          class="result-count"
+        >
+          0 resultados
+        </span>
+
+      </div>
+
+
+      <!-- LOADING SEARCH -->
+
+      <div
+        id="loading"
+        class="loading hidden"
+      >
+
+        <div class="spinner"></div>
+
+        <div>
+
+          <strong>
+            Buscando productos...
+          </strong>
+
+          <span>
+            Esto puede tardar unos segundos.
+          </span>
+
+        </div>
+
+      </div>
+
+
+      <!-- ERROR -->
+
+      <div
+        id="error"
+        class="error hidden"
+      ></div>
+
+
+      <!-- PRODUCTS -->
+
+      <div
+        id="products"
+        class="products"
+      >
+
+        <!-- INITIAL EMPTY STATE -->
+
+        <div class="empty-state">
+
+          <div class="empty-icon">
+            ⌕
+          </div>
+
+          <h3>
+            Busca un producto
+          </h3>
+
+          <p>
+            Introduce un término arriba para comenzar.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- MODAL -->
+
+  <div
+    id="modal"
+    class="modal hidden"
+  >
+
+    <div
+      id="modalOverlay"
+      class="modal-overlay"
+    ></div>
+
+
+    <div class="modal-content">
+
+      <button
+        id="closeModal"
+        class="close-button"
+      >
+        ×
+      </button>
+
+
+      <div class="modal-header">
+
+        <span class="modal-label">
+          PRODUCT DETAILS
+        </span>
+
+        <h2 id="modalTitle">
+          Información del producto
+        </h2>
+
+      </div>
+
+
+      <!-- LOADING DETAILS -->
+
+      <div
+        id="modalLoading"
+        class="modal-loading hidden"
+      >
+
+        <div class="spinner"></div>
+
+        <p>
+          Obteniendo información...
+        </p>
+
+      </div>
+
+
+      <!-- DETAILS -->
+
+      <div
+        id="modalDetails"
+        class="details-grid"
+      ></div>
+
+    </div>
+
+  </div>
+
+
+  <script src="./app.js"></script>
+
+</body>
+
+</html>
